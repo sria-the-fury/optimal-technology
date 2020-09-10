@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Optimal Technology</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+  <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+  <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+  <link rel="stylesheet" href="assets/css/styles.compiled.css">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="log-in" id="log_in" style="display: none;">
+    <div class="navbar">
+      <div class="container-fluid">
+
+        <img id="top-banner-img" src="assets/img/only_logo.png" alt="optimal logo">
+        <strong style="font-size: 1.2em; color: #000000;">Optimal Technology</strong>
+      </div>
+
+    </div>
+    <div class="login-clean">
+
+      <form id="login-form">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><img class="image_optimal" src="assets/img/only_logo.png"></i></div>
+        <div class="form-group">
+          <input class="form-control" type="email" id="login-email" placeholder="Enter your email" required>
+
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="login-password" placeholder="Password" minlength="6" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Log In</button>
+        </div>
+        <span class="forgot" id="match" style="color: red;display: none;">Forgot your password? click here & check
+          email.</span>
+      </form>
+    </div>
+
+
+    <div class="footer-clean" style="padding: 0; margin: 0;">
+      <footer>
+        <div class="container">
+
+
+          <div class="col-lg-3 item social"><a href="https://m.facebook.com/optimaltechnologybd"><i
+                class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a
+              href="#"><i class="icon ion-social-chrome"></i></a><a href="#"><i
+                class="icon ion-social-instagram"></i></a>
+            <p class="copyright" id="copyright" style="color: black;"></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+
+
+  <!-- after-login -->
+
+  <div class="admin" style="display: none;">
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="sidebar-header">
+
+        </div>
+
+        <ul class="list-unstyled components">
+
+
+          <li>
+            <a href="#" onclick="divVisibility('post')">Post Schedule Time</a>
+
+          </li>
+
+          <li>
+            <a href="#" onclick="divVisibility('eod')"> View EOD</a>
+          </li>
+
+          <li>
+            <a href="#" onclick="divVisibility('show_post_area');">Schedule Time</a>
+
+          </li>
+
+
+
+          <li>
+            <a href="#" onclick="divVisibility('money')"> View Money Requisition</a>
+
+          </li>
+
+
+          <li>
+            <a href="#" onclick="divVisibility('about')">About</a>
+          </li>
+
+        </ul>
+
+
+        <ul class="list-unstyled CTAs">
+          <li>
+            <a href="#" class="download" id="verify_admin"
+              style="background-color: rgb(103, 95, 226);;color: white;">Verify Email</a>
+          </li>
+          <li>
+            <a href="#" class="download" id="p_list" onclick="divVisibility('project_list_area');"
+              style="background-color: rgb(102, 82, 28);color: white;">Show Projects</a>
+          </li>
+
+          <li>
+            <a href="#" class="download" onclick="divVisibility('tech_list_admin');"
+              style="background-color: darkcyan;color: white;">Technicians' List</a>
+          </li>
+          <li>
+            <a href="#" class="download" onclick="divVisibility('add_project');"
+              style="background-color: #6699CC;color: white;">Add Projects</a>
+          </li>
+
+
+          <li>
+            <a href="#" class="download" id="logout" style="background-color: #E53935; color: white;" onclick="">Log
+              out</a>
+          </li>
+
+          <li>
+            <a href="#" class="download" style="background-color: rgb(192, 142, 141); color: white;"
+              onclick="divVisibility('add-admin');">Add Admin</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #4a216b;">
+              <i class="fas fa-align-left"></i>
+              <!-- <span>Menu</span> -->
+            </button>
+            <img src="images/refresh.png" style="width: 10%; height: 10%;" onclick="location.reload(true);">
+            <strong style="font-size: 1.2em; color: #d6336c;">Optimal Technology</strong>
+
+          </div>
+        </nav>
+
+        <!-- post time -->
+
+        <div class="post_div" id="post" style="display:block;">
+          <h4>Post Schedule Time</h4>
+          <div class="line"></div>
+
+          <form id="post_form">
+
+
+            <div class="form-group">
+              <label>Client Name : </label>
+              <select id="client_select" name="client_select" onchange="onChangeProject()" required>
+                <option value="">Select Client</option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Project Name : </label>
+              <select name="project_select" id="project_select" required>
+                <option value="">Select Project</option>
+
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="validationCustom01">Techicians' Name</label>
+              <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                placeholder="Write Technicians' Name Here..." name="techs_name" required></textarea>
+            </div>
+
+
+            <div class="form-group">
+              <label for="validationCustom01">Technician Leader Name</label>
+              <input type="text" name="tech_leader_name" class="form-control" id="validationCustom01"
+                placeholder="Enter Technician Leader Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="validationCustom01">Date</label>
+              <input type="date" name="date_of_work" class="form-control" id="validationCustom01"
+                placeholder="Enter Project Duration" required>
+
+            </div>
+
+            <div style="color: brown; margin-top: 6%;margin-bottom: 2%;text-align: justify;"><small>N.B : Check all the
+                input data carefully such as Technicians name ( one should be assigned only in a project ) before
+                pressing the Post Notice button.</small></div>
+
+
+
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color: #009acd;">Post
+                Notice</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+
+
+        <!-- Post List -->
+        <div id="show_post_area" style="display: none;">
+          <h4>Posted Time</h4>
+          <div class="line"></div>
+          <div class="project_list_content">
+            <form id="post_show_form">
+              <ul id="post_list"></ul>
+
+            </form>
+          </div>
+        </div>
+
+
+
+
+        <!--  Add project -->
+
+        <div class="project_add_area" id="add_project" style="display: none;">
+          <h4>Add Project Info</h4>
+          <div class="line"></div>
+
+          <form id="add_project_form">
+
+            <label>Client Name : </label>
+            <select name="client_select" id="client_select" required>
+              <option value="">Select Client</option>
+            </select>
+
+
+            <div class="form-group">
+              <label for="validationCustom01">Project Name</label>
+              <input type="text" name="project_name" class="form-control" id="validationCustom01"
+                placeholder="Enter Project Name" required>
+
+            </div>
+
+            <div class="form-group">
+              <label for="validationCustom01">Project Location</label>
+              <input type="text" name="project_location" class="form-control" placeholder="Enter Project Location"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="validationCustom01">Project Duration</label><br>
+              From :
+              <input type="date" name="project_duration_from" class="form-control" placeholder="Enter Project Duration"
+                required>
+              To:
+              <input type="date" name="project_duration_to" class="form-control" placeholder="Enter Project Duration"
+                required>
+
+            </div>
+
+            <div style="color: brown; margin-top: 6%;margin-bottom: 2%;text-align: justify;"><small>N.B : Check all the
+                input data carefully such as client name, Project name, project duration before pressing the Add Project
+                button.</small></div>
+
+
+            <div class="submit">
+              <input type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color: #009acd;"
+                value="Add project">
+
+            </div>
+
+
+          </form>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- About -->
+
+        <div class="about admin-user" id="about" style="display: none;">
+          <h4>About</h4>
+          <div class="line" style="background-color: black; "></div>
+          <h5>Developed By</h5>
+
+          <div class="grayArea">
+
+            <div class="wrap">
+
+              <div class="imageArea">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/optimal-technology.appspot.com/o/images%2Fabout%2Fme.png?alt=media&token=f45e5d2d-6821-4fe8-aa3e-c53948209568"
+                  alt="Jakaria" id="sria">
+
+              </div>
+              <div class="aboutWrite" style="text-align: center;">
+                <p style="color: black;font-weight: Normal;">Jakaria Mashud Shahria</p>
+                <p style="color: black;">BSc. in Computer Science and Engineering</p>
+                <p style="color: black;">Bangladesh Army International University of Science and
+                  Technology,Cumilla Cantonment.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tusarSep" style="margin-top: 3%">
+
+            <div class="grayArea">
+
+              <div class="wrap">
+
+                <div class="imageArea">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/optimal-technology.appspot.com/o/images%2Fabout%2FTushar.jpg?alt=media&token=645a283e-d61c-4019-ae7c-54d1b6993921"
+                    alt="Tushar" id="sria">
+
+                </div>
+                <div class="aboutWrite" style="text-align: center;">
+                  <p style="color: black;font-weight: Normal;">Mir Md. Newaz Khorshed</p>
+                  <p style="color: black;">BSc. in Computer Science and Engineering</p>
+                  <p style="color: black;">Bangladesh Army International University of Science and
+                    Technology,Cumilla Cantonment.</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- EOD_start -->
+
+
+        <div class="eod_area" id="eod" style="display: none;">
+          <h4>EOD List</h4>
+          <div class="line"></div>
+
+          <div class="req_border">
+
+            <ul class="collapsible z-depth-0 eod_list" name="list" style="border: none;">
+
+            </ul>
+          </div>
+
+        </div>
+
+
+        <div class="eod_area" id="update_pass" style="display: none;">
+          <h4>Update Password</h4>
+          <div class="line"></div>
+          <form id="password_update_form">
+            <div class="form-group">
+              <label>Password</label>
+
+              <input class="form-control" type="password" id="updatePass" placeholder="Password" minlength="6" required><br>
+              <input type="checkbox" onclick="myFunction()">Show Password
+            </div>
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color:#f06595;">Update</button>
+            </div>
+          </form>
+
+        </div>
+
+
+
+        <div class="eod_area" id="set_name" style="display: none;">
+          <h4>Set Name</h4>
+          <div class="line"></div>
+          <form id="set_form">
+            <div class="form-group">
+              <label>Your Name</label>
+
+              <input class="form-control" type="text" id="setName" placeholder="Enter your name" required><br>
+            </div>
+
+            <!-- <div class="form-group">
+              <label>Mobile No.</label>
+
+              <input class="form-control" type="text" id="setMobile" placeholder="Mobile number" minlength="11" maxlength="11" required><br>
+             
+            </div> -->
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color:#f06595;">Update</button>
+            </div>
+          </form>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- money requisition -->
+
+        <div id="money" style="display:none;">
+          <h4>Money Requisition</h4>
+          <div class="line"></div>
+          <div class="req_border">
+
+            <ul class="collapsible z-depth-0 req_list" name="list" style="border: none;">
+
+            </ul>
+          </div>
+        </div>
+
+
+
+        <!-- Add admin -->
+
+        <div id="add-admin" style="display:none;">
+          <h4>Add Admin</h4>
+          <div class="line"></div>
+          <form id="admin-add-email">
+            <div class="form-group">
+              <input class="form-control" type="email" id="admin-email" placeholder="Enter admin email" required>
+
+            </div>
+
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color: #009acd;">Submit</button>
+
+            </div>
+
+
+          </form>
+
+        </div>
+
+        <!-- Technicians' List -->
+
+        <div class="tech_list_are" id="tech_list_admin" style="display: none;">
+          <h4>Technicians' List</h4>
+          <div class="line"></div>
+          <h5 id="total_tech"></h5>
+          <div class="tech_item_list">
+            <div class="wrap_tech" id="list_div">
+              <ul id="tech_list">
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Projects List -->
+        <div id="project_list_area" style="display: none;">
+          <h4>Projects List</h4>
+          <div class="line"></div>
+          <div class="project_list_content">
+            <form id="project_list_form">
+              <ul name="project_list" id="project_list"></ul>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- technician-area-start -->
+
+  <div class="technician" style="display: none;">
+
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar_tech">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="sidebar-header">
+        </div>
+
+        <ul class="list-unstyled components">
+          <li>
+            <a href="#" onclick="divVisibility('show_post_tech');">Schedule Time</a>
+
+          </li>
+          <li>
+            <a href="#" onclick="divVisibility('eod_area');">Feedback for EOD</a>
+          </li>
+          <li>
+            <a href="#" onclick="divVisibility('req_area')">Money Requisition</a>
+
+          </li>
+
+
+          <li>
+            <a href="#" onclick="divVisibility('about_tech');">About</a>
+          </li>
+
+
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+          <li>
+            <a href="#" class="download" id="verify_tech"
+              style="background-color: rgb(103, 95, 226);color: white;">Verify Email</a>
+          </li>
+          <li>
+            <a href="#" class="download" id="p_list" onclick="divVisibility('project_list_tech');"
+              style="background-color: rgb(102, 82, 28);color: white;">Show Projects</a>
+          </li>
+          <li>
+            <a href="#" class="download" onclick="divVisibility('tech_list_tech');"
+              style="background-color: darkcyan;color: white;">Technicians' List</a>
+          </li>
+
+          <li>
+            <a href="#" class="download" id="logout" style="background-color: #E53935; color: white;" onclick="">Log
+              out</a>
+          </li>
+
+        </ul>
+
+
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse_tech" class="btn btn-info" style="background-color: #4a216b;">
+              <i class="fas fa-align-left"></i>
+              <!-- <span>Menu</span> -->
+            </button>
+            <img src="images/refresh.png" style="width: 10%; height: 10%;" onclick="location.reload(true);"> <strong
+              style="font-size: 1.2em;color: #d6336c;">Optimal Technology</strong>
+
+
+          </div>
+        </nav>
+
+
+        <!-- Post List -->
+        <div id="show_post_tech" style="display: block;">
+          <h4>Posted Time</h4>
+          <div class="line"></div>
+          <div class="project_list_content">
+            <form id="post_show_form">
+              <ul id="post_list"></ul>
+
+            </form>
+          </div>
+        </div>
+
+
+        <!-- EOD -->
+
+        <div class="eod_area" id="eod_area" style="display: none;">
+          <h4>Daily EOD Report for Projects</h4>
+          <div class="line"></div>
+
+          <div class="intro" id="intro" style="display: block;">
+            <p style="color: black;">Dear Technical Team Leader,</p>
+
+            <p style="color: black; text-align: justify;" id="first_para">অপটিমাল টেকনোলোজি লিঃ এর কর্তৃপক্ষ প্রত্যক্ষ ও
+              পরোক্ষভাবে অবগত আছেন যে, আপনারা অত্যাধিক ও অক্লান্ত পরিশ্রম করে রাত/দিন, রোদ-বৃষ্টি মাথায় নিয়ে Project এর
+              জন্য নিরলস ভাবে কাজ করে যাচ্ছেন। আপনাদের পাঠানো কাজের ছবি তারই প্রমান। প্রতিষ্ঠানটিকে আরো গতিশীল, কাজের
+              মধ্যে অধিক শৃঙ্খলা, নিয়মানুবর্তিতার জন্য প্রতিদিনের কর্মক্ষমতা বিচার বিশ্লেষণ করা অত্যান্ত জরুরী।</p>
+
+            <p style="color: black; text-align: justify;">এই লক্ষে আপনাদের কাজের প্রতিদিনের দৈনন্দিন কাজের বিবরণী বা End
+              of Day (EOD) Report টি Online এর মাধ্যমে উপস্থাপন করা হলো। প্রয়োজনীয় তথ্য দিয়ে আমাদের কে সহযোগীতা করিবেন।
+              আপনাদের পাঠানো তথ্য দিয়ে প্রতিষ্ঠানে নিয়োজিত Business Analyst গন Optimal Technology Ltd Authority কে
+              সুন্দর একটি দিক নির্দেশনা দিবেন। </p>
+
+
+            <p style="color: black; text-align: justify;"> আমাদের উদ্দেশ্যঃ "আমরা সবাই মিলে একসাথে থাকবো এবং ভাল থাকবো,
+              ইনশাল্লাহ"।</p>
+
+            <p style="color: black;">ধন্যবাদ - অপটিমাল টেকনোলোজি লিঃ</p>
+
+
+          </div>
+
+          <div class="start_eod" style="display: block;">
+            <button type="button" id="eod_start_button" class="btn btn-secondary" onclick="eod_start();">Start
+              EOD</button>
+
+          </div>
+
+          <div class="inputs" id="inputs" style="display: none;">
+            <form id="eod_form_add">
+
+              <label for=""> ** আপনি কি জানেন, প্রতি মাসের ৩০ তারিখের মধ্যে Project এর খরচের বিল পরিশোধ না করলে, আপনার
+                বেতন স্থগিত রাখা হবে?</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_hold" id="radio_yes" value="Yes" required>
+                <label class="form-check-label">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_hold" id="radio_no" value="No" required>
+                <label class="form-check-label">
+                  No
+                </label>
+              </div>
+
+              <label style="margin-top: 2%;">১. আপনার Department এর নাম কি? </label>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_team" id="team_radio_yes"
+                  value="Technical Team" required>
+                <label class="form-check-label">
+                  Technical Team
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_team" id="team_radio_no" value="Solution Team"
+                  required>
+                <label class="form-check-label">
+                  Solution Team
+                </label>
+              </div>
+
+
+              <label style="margin-top: 2%;">২. আপনি এখন কোন তারিখের EOD দিচ্ছেন ?</label>
+
+              <div class="form-group">
+                <label for="validationCustom01">Date:</label>
+                <input type="date" name="eod_for_date" class="form-control" id="validationCustom01"
+                  placeholder="Enter Project Duration" required>
+              </div>
+
+
+
+
+              <div class="form-group">
+
+                <div class="dropdown">
+                  <label style="margin-top: 2%;">৩. প্রজেক্টটি সিলেক্ট করুন :</label>
+                  <select name="project_select" id="project_select" required>
+                    <option value="">Select Project</option>
+
+                  </select>
+                </div>
+              </div>
+
+              <div class="invalid-feedback">
+                Enter Date of Work!
+              </div>
+
+              <label>৪. আপনি কি এই প্রজেক্টের Team Leader? তাহলে আপনার নামটি লিখুন </label>
+
+              <div class="form-group">
+
+                <input type="text" name="project_team_leader" class="form-control" id="validationCustom01"
+                  placeholder="Enter Your Name" required>
+              </div>
+
+              <label>৫. এই প্রজেক্টে আপনার সাথে আর কে কে কাজ করছেন? তাদের নামগুলো লিখুন
+              </label>
+
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="write names....." name="techs_name" required></textarea>
+
+              </div>
+
+              <label>৬. আজকের দিনে কি কি কাজ করেছেন? তার একটি বর্ণনা দিন। </label>
+
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="Describe Today's Work......" name="work_description" required></textarea>
+
+              </div>
+
+              <label>৭. এই প্রজেক্টের জন্য কত ManDay ধরা হয়েছিল?
+              </label><br>
+              <small>* শুধু সংখ্যাটি লিখুন। যদি আপনার মনে না থাকে, তাহলে মিঃ নাছির সাহেবের নিকট থেকে জেনে নিন।</small>
+
+              <div class="form-group">
+
+                <input type="number" name="man_day" class="form-control" id="validationCustom01" placeholder="ManDay"
+                  minlength="1" maxlength="2" required>
+
+              </div>
+
+
+              <label>৮. এই প্রকল্পে আপনি কতদিন ধরে কাজ করছেন?
+              </label><br>
+              <small>* শুধু ইংরেজীতে সংখ্যাটি লিখুন, যেমন 1, 2, 5, 20, etc. (0 = Today)</small>
+
+              <div class="form-group">
+
+                <input type="number" name="how_days_work" class="form-control" id="validationCustom01"
+                  placeholder="Enter days" minlength="1" maxlength="2" required>
+
+              </div>
+
+
+
+              <label>৯. এই প্রকল্পের কাজ শেষ হতে আর কত দিন লাগতে পারে?
+              </label><br>
+              <small>* আনুমানিক একটি ধারনা দিন। শুধু সংখ্যাটি ইংরেজীতে লিখুন। যেমন : 5, 7, 10, 20</small>
+
+              <div class="form-group">
+
+                <input type="number" name="days_need" class="form-control" id="validationCustom01"
+                  placeholder="Enter days" maxlength="2" minlength="1" required>
+
+              </div>
+
+
+              <label>১০. আপনার Official মোবাইল নম্বরটি লিখুন।
+              </label><br>
+              <small>* মোবাইল নাম্বারটি ইংরেজী অক্ষরে লিখুন - যেমন 017*********</small>
+
+              <div class="form-group">
+
+                <input type="number" name="mobile_no" class="form-control" id="validationCustom01"
+                  placeholder="Enter Mobile No." minlength="11" maxlength="11" required>
+
+              </div>
+
+
+              <label>১১. এই প্রকল্পে কাজ করতে আপনি কি কি অসুবিধা হচ্ছে? লিখুন -
+              </label><br>
+              <small>* আপনার যে কোন সমস্যা, মতামত, অভিযোগ, আবদার, দাবী বা প্রকল্পের জন্য যে কোন মতামত দিন। না থাকলে No
+                লিখুন</small>
+
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="সমস্যা, মতামত, অভিযোগ লিখুন...." name="desc_problems" required></textarea>
+
+              </div>
+
+
+              <div class="submit">
+                <button type="submit" class="btn btn-success"
+                  style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color: #009acd;">Submit</button>
+
+              </div>
+
+
+
+            </form>
+
+
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Money Requisition -->
+
+        <div class="req_area" id="req_area" style="display: none;">
+          <h4>Money Requisition</h4>
+          <div class="line"></div>
+
+          <div class="intro" id="intro_req" style="display: block;">
+            <p style="color: black;">Dear Technical Team Leader,</p>
+
+            <p style="color: black; text-align: justify;" id="first_para">যে কোন Project এর কাজ নিরবিচ্ছিন্ন ভাবে
+              সম্পন্ন
+              করার জন্য প্রয়োজনীয় টাকা আপনাদের নিকট যথাসময়ে পৌঁছে দেওয়া আমাদের নৈতিক দায়িত্ব ও কর্তব্য। আমাদের টিম তা
+              নিরবিচ্ছিন্ন ভাবে করে যাচ্ছেন। টাকা পাওয়ার পর খরচের বিল প্রতি মাসের ৩০ তারিখের মধ্যে নিজ দায়িত্বে অফিসে
+              জমা
+              দিবেন, অন্যথায় আপনার বেতন স্থগিত রাখা হবে।</p>
+
+            <p style="color: black; text-align: justify;">নিচের তথ্য গুলো প্রদান করে আমাদেরকে সহযোগীতা করবেন এবং গ্রুপে
+              আপনার bKash নাম্বারটি দিবেন। খুব বেশী জরুরী হলে মিঃ নাছের সাহেব কে ফোন দিবেন।</p>
+
+
+            <p style="color: black; text-align: justify;"> আমাদের উদ্দেশ্যঃ "আমরা সবাই মিলে একসাথে থাকবো এবং ভাল থাকবো,
+              ইনশাল্লাহ"।</p>
+
+            <p style="color: black;">ধন্যবাদ - অপটিমাল টেকনোলোজি লিঃ</p>
+
+
+          </div>
+
+          <div class="start_eod" style="display: block;">
+            <button type="button" id="req_start_button" class="btn btn-secondary" onclick="req_start();">Start Money
+              Requisition</button>
+
+          </div>
+
+          <div class="inputs" id="inputs_req" style="display: none;">
+
+            <form id="money_req_form">
+
+              <label for=""> ** আপনি কি প্রতিদিন EOD জমা দিচ্ছেন?</label><br>
+              <small>শর্ত - ১ঃ প্রতিদিন EOD সাবমিট না করলে, প্রজেক্টের জন্য কোন টাকা দেওয়া হবে না।</small>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_eod" id="radio_yes" value="Yes" required>
+                <label class="form-check-label">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_eod" id="radio_no" value="No" required>
+                <label class="form-check-label">
+                  No
+                </label>
+              </div>
+
+
+
+              <label for="" style="margin-top: 2%;"> *** আপনি কি জানেন, প্রতি মাসের ৩০ তারিখের মধ্যে Project এর খরচের
+                বিল
+                পরিশোধ না করলে, আপনার বেতন স্থগিত রাখা হবে?</label><br>
+              <small>শর্ত - ২ঃ Original Bill গুলো যত তাড়াতড়ি সম্ভব অফিসে জমা দিয়ে, মিঃ নাছেরের নিকট থেকে Receive করে
+                নিবেন।</small>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_hold" id="radio_yes" value="Yes" required>
+                <label class="form-check-label">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio_hold" id="radio_no" value="No" required>
+                <label class="form-check-label">
+                  No
+                </label>
+              </div>
+
+
+              <label style="margin-top: 2%;">১. যে প্রজেক্টের জন্য টাকা দরকার, সেই প্রজেক্টেটি সিলেক্ট করুন</label>
+
+
+              <div class="form-group">
+                <select name="project_select" id="project_select" required>
+                  <option value="">Select Project</option>
+
+                </select>
+              </div>
+
+              <label>২. আপনি কি এই প্রজেক্টের Team Leader? তাহলে আপনার নাম লিখুন?</label><br>
+              <small>* শুধু আপনার নাম ইংরেজীতে লিখুন</small>
+              <div class="form-group">
+
+                <input type="text" name="team_leader" class="form-control" id="validationCustom01"
+                  placeholder="Enter your name" required>
+              </div>
+
+
+              <label>৩. এই প্রজেক্টে আপনার সাথে মোট কয়জন Technicians কাজ করছেন?</label>
+              <div class="form-group">
+
+                <input type="number" name="techs_no" class="form-control" id="validationCustom01"
+                  placeholder="Technicians' Number" required>
+              </div>
+
+              <label>৪. তাদের (Technicians) নামগুলো লিখুন</label>
+              <br>
+              <small>* ওদের নাম ইংরেজীতে লিখুন</small>
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="Write Technicians' Name......" name="techs_name" required></textarea>
+              </div>
+
+              <label>৫. এই প্রজেক্টের জন্য প্রতিদিনের মোট কত টাকা লাগে?</label><br>
+              <small>* শুধু টাকার সংখ্যাটি ইংরেজীতে লিখুন, যেমন 500, 1000, 2000, 3000</small>
+              <div class="form-group">
+
+                <input type="number" name="money_amount" class="form-control" id="validationCustom01"
+                  placeholder="write amount" required>
+              </div>
+
+              <label>৬. এই প্রকল্পের কাজ শেষ হতে আর কত দিন লাগতে পারে?
+              </label><br>
+              <small>* আনুমানিক একটি ধারনা দিন। শুধু সংখ্যাটি ইংরেজীতে লিখুন। যেমন : 5, 7, 10, 20</small>
+
+              <div class="form-group">
+
+                <input type="number" name="days_need" class="form-control" id="validationCustom01"
+                  placeholder="Enter days" maxlength="2" minlength="1" required>
+              </div>
+
+              <label>৭. এই প্রজেক্টের জন্য এ পর্যন্ত মোট কত টাকা অফিস থেকে নিয়েছেন?</label><br>
+              <small>* শুধু ইংরেজীতে টাকার সংখ্যা উল্লেখ করুন, যেমন - 2000, 3000, 4000, 5000</small>
+              <div class="form-group">
+
+                <input type="number" name="money_amounttaken" class="form-control" id="validationCustom01"
+                  placeholder="write amount" required>
+              </div>
+
+
+              <label>৮. এই প্রজেক্টের জন্য কি কোন মালামাল ক্রয় করতে হবে?</label>
+              <br>
+              <small>* উত্তর হ্যাঁ হলে, কি কি মালামাল ক্রয় করতে হবে, তার একটি লিষ্ট দিন</small>
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="Write list......" name="goods_need" required></textarea>
+              </div>
+
+              <label>৯. এই প্রজেক্টের জন্য এই মূহুর্তে আপনার কত টাকার প্রয়োজন?</label><br>
+              <small>* শুধু ইংরেজীতে টাকার সংখ্যা উল্লেখ করুন, যেমন - 2000, 3000, 4000, 5000</small>
+              <div class="form-group">
+
+                <input type="number" name="money_amount_need" class="form-control" id="validationCustom01"
+                  placeholder="write amount" required>
+              </div>
+
+              <label>১০. এই প্রজেক্টের খরচের বিল গুলো আপনি কি অফিসে জমা দিয়েছেন?</label>
+              <br>
+              <small>* উত্তর ”না” হলে - আপনি বিলগুলো কবে জমা দিবেন, তারিখটা লিখুন?</small>
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="Write here...." name="when_bill" required></textarea>
+              </div>
+
+
+              <label>১১. আপনার অফিসের মোবাইল নাম্বার টা লিখুন</label><br>
+              <small>*নিরাপত্তার কারনে আপনাদের bKash নাম্বারটি ও টাকার কথা উল্লেখ করে আমাদের গুরুপে পোষ্ট করুন।</small>
+              <div class="form-group">
+
+                <input type="number" name="mobile_no" class="form-control" id="validationCustom01"
+                  placeholder="mobile number" minlength="11" maxlength="11" required>
+              </div>
+
+
+              <label>** আপনার যে কোন ধরনের মতামত থাকলে জানান
+
+              </label><br>
+              <small>* আপনার যে কোন সমস্যা, মতামত, অভিযোগ, আবদার, দাবী বা প্রকল্পের জন্য যে কোন মতামত দিন। না থাকলে No
+                লিখুন</small>
+
+              <div class="form-group">
+
+                <textarea class="form-control" id="validationCustom01" aria-label="With textarea"
+                  placeholder="সমস্যা, মতামত, অভিযোগ লিখুন...." name="desc_problems" required></textarea>
+              </div>
+
+
+              <div class="submit">
+                <button type="submit" class="btn btn-success"
+                  style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color: #009acd;">Submit</button>
+
+              </div>
+
+            </form>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Technicians' List -->
+
+        <div class="tech_list_are" id="tech_list_tech" style="display: none;">
+          <h4>Technicians' List</h4>
+          <div class="line"></div>
+          <h5 id="total_tech"></h5>
+
+          <div class="tech_item_list">
+
+
+            <div class="wrap_tech" id="list_div">
+              <ul id="tech_list"></ul>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- project_list -->
+
+        <div id="project_list_tech" style="display: none;">
+          <h4>Projects List</h4>
+          <div class="line"></div>
+          <div class="project_list_content">
+            <form>
+              <ul name="project_list" id="project_list">
+              </ul>
+
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="eod_area" id="update_pass_tech" style="display: none;">
+          <h4>Update Password</h4>
+          <div class="line"></div>
+          <form id="password_update_form_tech">
+            <div class="form-group">
+              <label>Password</label>
+
+              <input class="form-control" type="password" id="updatePassTech" placeholder="Password" minlength="6" required><br>
+              <input type="checkbox" onclick="myFunctionTech()">Show Password
+            </div>
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color:#f06595;">Update</button>
+            </div>
+          </form>
+
+        </div>
+
+
+        <div class="eod_area" id="set_name_tech" style="display: none;">
+          <h4>Set Name</h4>
+          <div class="line"></div>
+          <form id="set_form_tech">
+            <div class="form-group">
+              <label>Your Name</label>
+
+              <input class="form-control" type="text" id="setNameTech" placeholder="Enter your name" required><br>
+             
+            </div>
+
+            <!-- <div class="form-group">
+              <label>Mobile No.</label>
+
+              <input class="form-control" type="text" id="setMobileTech" placeholder="Mobile number" minlength="11" maxlength="11" required><br>
+             
+            </div> -->
+            <div class="submit">
+              <button type="submit" class="btn btn-success"
+                style="border: 1px solid gray;width: 100%;box-shadow: inset 0 1px 1px #a4e388;background-color:#f06595;">Update</button>
+            </div>
+          </form>
+
+        </div>
+
+
+
+
+
+
+        <!-- About -->
+
+        <div class="about" id="about_tech" style="display: none;">
+          <h4>About</h4>
+          <div class="line" style="background-color: black; "></div>
+
+          <div class="grayArea">
+
+            <div class="wrap">
+
+              <div class="imageArea">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/optimal-technology.appspot.com/o/images%2Fabout%2Fme.png?alt=media&token=f45e5d2d-6821-4fe8-aa3e-c53948209568"
+                  alt="Jakaria" id="sria">
+
+              </div>
+              <div class="aboutWrite" style="text-align: center;">
+                <p style="color: black;font-weight: Normal;">Jakaria Mashud Shahria</p>
+                <p style="color: black;">BSc. in Computer Science and Engineering</p>
+                <p style="color: black;">Bangladesh Army International University of Science and Technology,Cumilla
+                  Cantonment.</p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tusarSep" style="margin-top: 3%">
+
+            <div class="grayArea">
+
+              <div class="wrap">
+
+                <div class="imageArea">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/optimal-technology.appspot.com/o/images%2Fabout%2FTushar.jpg?alt=media&token=645a283e-d61c-4019-ae7c-54d1b6993921"
+                    alt="Tushar" id="sria">
+
+                </div>
+                <div class="aboutWrite" style="text-align: center;">
+                  <p style="color: black;font-weight: Normal;">Mir Md. Newaz Khorshed</p>
+                  <p style="color: black;">BSc. in Computer Science and Engineering</p>
+                  <p style="color: black;">Bangladesh Army International University of Science and Technology,Cumilla
+                    Cantonment.</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-functions.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCG5nG1PPeH0ERe6EiMBn8rMqCQyHOG2Zk",
+      authDomain: "optimal-technology.firebaseapp.com",
+      databaseURL: "https://optimal-technology.firebaseio.com",
+      projectId: "optimal-technology",
+      storageBucket: "optimal-technology.appspot.com",
+      messagingSenderId: "47311583341",
+      appId: "1:47311583341:web:d82342f05336f0ee9a2764",
+      measurementId: "G-1CFNJYQNKJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const functions = firebase.functions();
+  </script>
+
+
+
+
+
+
+  <script src="js/button_active_admin.js" type="text/JavaScript"></script>
+
+
+  <script src="js/client_list.js" type="text/JavaScript"></script>
+
+  <script src="js/project_list.js" type="text/JavaScript"></script>
+
+
+  <script src="js/collapse_list.js" type="text/JavaScript"></script>
+
+  <script src="script/auth.js" type="text/JavaScript"></script>
+  <script src="script/index.js" type="text/JavaScript"></script>
+
+
+
+
+  <!-----Sidebar---->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#dismiss, .overlay').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').addClass('active');
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <!-----Sidebar Tech---->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar_tech").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#dismiss, .overlay').on('click', function () {
+        $('#sidebar_tech').removeClass('active');
+        $('.overlay').removeClass('active');
+      });
+
+      $('#sidebarCollapse_tech').on('click', function () {
+        $('#sidebar_tech').addClass('active');
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <script>
+
+    var d = new Date();
+    var year = d.getFullYear();
+    document.getElementById("copyright").innerHTML = "Optimal Technology Private Limited © " + year;
+  </script>
+
+
+  <script>
+
+    function eod_start() {
+
+      var start_btn = document.getElementById('eod_start_button');
+      var intro_off = document.getElementById('intro');
+      var input = document.getElementById('inputs');
+
+
+      if (intro_off.style.display === "block") {
+        intro_off.style.display = "none";
+        start_btn.style.display = "none";
+        input.style.display = "block";
+      }
+
+    }
+
+
+  </script>
+
+
+  <script>
+
+    function req_start() {
+
+      var start_btn = document.getElementById('req_start_button');
+      var intro_off = document.getElementById('intro_req');
+      var input = document.getElementById('inputs_req');
+
+
+      if (intro_off.style.display === "block") {
+        intro_off.style.display = "none";
+        start_btn.style.display = "none";
+        input.style.display = "block";
+      }
+
+    }
+
+
+  </script>
+
+
+
+  <script src="js/project_select_tech.js" type="text/JavaScript"></script>
+
+
+
+  <script>
+    function myFunction() {
+      var x = document.querySelector("#updatePass");
+      if (x.type === "password" ) {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
+<script>
+  function myFunctionTech() {
+    var x = document.querySelector("#updatePassTech");
+    if (x.type === "password" ) {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+
+
+
+
+</body>
+
+</html>
