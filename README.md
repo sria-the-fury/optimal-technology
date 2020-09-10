@@ -1,10 +1,10 @@
-#Optimal Technology Ltd
-##TikTalk
+# Optimal Technology Ltd
+## TikTalk
 This Application is not a personal project. When I was an Intern of Optimal Technology Private Limited, they shared a sketch idea for making this Application for their office works. So I developed this as a single person. If I got a helping hand there, I would make it better.
 
 
-##What was it for
-###Admin Sides
+## What was it for
+### Admin Sides
 - Post work schedule time for the **Technicians** by **Admins**.
 - View EOD given by the Technicians.
 - View Money Requisition given by the Technicians.
@@ -12,14 +12,14 @@ This Application is not a personal project. When I was an Intern of Optimal Tech
 - List of all Technicians.
 - Add another Admin( an Admin can add another admin ).
 
-###Technician Sides
+### Technician Sides
 - View posted schedule time for work.
 - give feedback for EOD.
 - give Money Requisition feedback.
 - Show Projects.
 
 
-##Application Functionalities/Features
+## Application Functionalities/Features
 - Use HTML5, Bootstrap, JavaScript, JQuery, CSS etc.
 - Hosting in Firebase.
 - Use Firebase email authentication.( users are predefined ).
@@ -35,7 +35,7 @@ This Application is best for mobile devices and Tablets.
 So for viewing I use Flutter Web View for it.
  The android Apk is here :  [OptimalTechnology.apk](https://drive.google.com/file/d/11MR03QLrf8qshDG1MrgT8uEgR2Fg7ldm/view?usp=sharing)
 
-###Time to see some interfaces
+### Time to see some interfaces
 
 - Splash Screen.
 ![Splash Screen!](interfaces/in-1.jpg "Splash Screen")
